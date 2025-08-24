@@ -18,7 +18,7 @@
 <body>
     <div class="container">
         <h1>Individual Assignment Part 1 and 2</h1>
-        <p><strong>Student Number:</strong> [Your Student Number]</p>
+        <p><strong>Student Number:</strong> 4346549 </p>
         <p><strong>Chatbot Name:</strong> HyperCare AI Assistant</p>
         <p><strong>Health Challenge Addressed:</strong> Hypertension Management and Education</p>
         <hr>
@@ -49,56 +49,379 @@
         </ol>
 
         <h4>Architecture Diagram</h4>
-        <pre><code>graph TD
-    A[Existing HypertenCare UI&lt;br/&gt;Multi-language Support] --> B[Enhanced Chatbot Interface&lt;br/&gt;Preserving Current UX]
-    B --> C[User Context Processing&lt;br/&gt;Assessment Integration]
-    C --> D[Intelligent Query Analysis&lt;br/&gt;Cultural Context Aware]
-    D --> E[SA-Specific Knowledge Base&lt;br/&gt;Pinecone Vector Store]
-    D --> F[Contextual AI Processing&lt;br/&gt;OpenRouter/Gemini LLMs]
-    E --> F
-    F --> G[Culturally-Sensitive Response&lt;br/&gt;Resource-Aware Guidance]
-    G --> H[Medical Accuracy Validation&lt;br/&gt;SA Healthcare Context]
-    H --> B
-    B --> A
-    
-    I[Existing Assessment Tools&lt;br/&gt;15-Question Risk Assessment] --> C
-    J[SA Clinic Directory&lt;br/&gt;3,500+ Locations] --> E
-    K[Emergency Resources&lt;br/&gt;10177, Health Hotlines] --> E
-    L[Educational Games&lt;br/&gt;BP Simulator, Memory Match] --> C
-    
-    subgraph "Business Layer - SA Healthcare Goals"
-        M[Free Healthcare Access&lt;br/&gt;NHI Alignment]
-        N[Community Health&lt;br/&gt;Worker Support]
-        O[Multilingual Accessibility&lt;br/&gt;11 Official Languages]
-    end
-    
-    subgraph "Application Layer - Enhanced Intelligence"
-        B
-        C
-        D
-        G
-        H
-    end
-    
-    subgraph "Data Layer - SA Context"
-        E
-        I
-        J
-        K
-        L
-    end
-    
-    subgraph "Technology Layer - AI Integration"
-        F
-        P[Existing Platform Infrastructure&lt;br/&gt;Mobile-Optimized]
-    end
-    
-    style A fill:#e1f5fe
-    style E fill:#f3e5f5
-    style F fill:#e8f5e8
-    style C fill:#fff3e0
-    style I fill:#f0f4c3
-</code></pre>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HypertenCare Enhanced Architecture</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .title {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 30px;
+            font-size: 28px;
+            font-weight: 600;
+        }
+
+        .diagram-container {
+            position: relative;
+            width: 100%;
+            height: 800px;
+            background: #f8f9fa;
+            border: 2px solid #e9ecef;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .layer {
+            position: absolute;
+            border: 2px dashed #6c757d;
+            border-radius: 8px;
+            padding: 10px;
+            font-weight: bold;
+            color: #495057;
+            background: rgba(255,255,255,0.8);
+        }
+
+        .business-layer {
+            top: 20px;
+            left: 20px;
+            width: 280px;
+            height: 120px;
+            border-color: #28a745;
+            color: #28a745;
+        }
+
+        .application-layer {
+            top: 160px;
+            left: 20px;
+            width: 500px;
+            height: 200px;
+            border-color: #007bff;
+            color: #007bff;
+        }
+
+        .data-layer {
+            top: 380px;
+            left: 20px;
+            width: 700px;
+            height: 180px;
+            border-color: #6f42c1;
+            color: #6f42c1;
+        }
+
+        .technology-layer {
+            top: 580px;
+            left: 20px;
+            width: 400px;
+            height: 120px;
+            border-color: #fd7e14;
+            color: #fd7e14;
+        }
+
+        .node {
+            position: absolute;
+            background: white;
+            border: 2px solid #dee2e6;
+            border-radius: 8px;
+            padding: 12px;
+            text-align: center;
+            font-size: 11px;
+            font-weight: 500;
+            line-height: 1.2;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .node:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        /* Node styling */
+        .node-a { top: 40px; left: 50px; width: 140px; height: 50px; background: #e1f5fe; border-color: #0277bd; }
+        .node-b { top: 180px; left: 40px; width: 140px; height: 50px; background: #fff3e0; border-color: #f57c00; }
+        .node-c { top: 180px; left: 220px; width: 140px; height: 50px; background: #fff3e0; border-color: #f57c00; }
+        .node-d { top: 260px; left: 130px; width: 140px; height: 50px; background: #fff3e0; border-color: #f57c00; }
+        .node-e { top: 400px; left: 40px; width: 140px; height: 50px; background: #f3e5f5; border-color: #7b1fa2; }
+        .node-f { top: 600px; left: 40px; width: 140px; height: 50px; background: #e8f5e8; border-color: #388e3c; }
+        .node-g { top: 260px; left: 400px; width: 140px; height: 50px; background: #fff3e0; border-color: #f57c00; }
+        .node-h { top: 180px; left: 400px; width: 140px; height: 50px; background: #fff3e0; border-color: #f57c00; }
+        .node-i { top: 400px; left: 220px; width: 140px; height: 50px; background: #f0f4c3; border-color: #689f38; }
+        .node-j { top: 480px; left: 40px; width: 140px; height: 50px; background: #f3e5f5; border-color: #7b1fa2; }
+        .node-k { top: 480px; left: 220px; width: 140px; height: 50px; background: #f3e5f5; border-color: #7b1fa2; }
+        .node-l { top: 400px; left: 400px; width: 140px; height: 50px; background: #f0f4c3; border-color: #689f38; }
+        .node-p { top: 600px; left: 220px; width: 140px; height: 50px; background: #e8f5e8; border-color: #388e3c; }
+
+        .business-nodes {
+            position: absolute;
+            top: 40px;
+            left: 320px;
+            width: 200px;
+            height: 100px;
+        }
+
+        .business-node {
+            position: absolute;
+            background: #d4edda;
+            border: 1px solid #28a745;
+            border-radius: 5px;
+            padding: 8px;
+            font-size: 10px;
+            text-align: center;
+            color: #155724;
+        }
+
+        .business-node-1 { top: 0; left: 0; width: 90px; height: 25px; }
+        .business-node-2 { top: 35px; left: 0; width: 90px; height: 25px; }
+        .business-node-3 { top: 0; left: 100px; width: 90px; height: 25px; }
+
+        .arrow {
+            position: absolute;
+            width: 0;
+            height: 0;
+            z-index: 10;
+        }
+
+        .arrow-line {
+            position: absolute;
+            background: #6c757d;
+            z-index: 5;
+        }
+
+        /* Arrow styling */
+        .arrow1 { top: 90px; left: 120px; border-left: 8px solid transparent; border-right: 8px solid transparent; border-top: 12px solid #6c757d; }
+        .line1 { top: 90px; left: 124px; width: 2px; height: 90px; }
+
+        .arrow2 { top: 230px; left: 180px; border-left: 8px solid transparent; border-right: 8px solid transparent; border-top: 12px solid #6c757d; }
+        .line2 { top: 230px; left: 184px; width: 2px; height: 30px; }
+
+        .arrow3 { top: 310px; left: 200px; border-top: 8px solid transparent; border-bottom: 8px solid transparent; border-left: 12px solid #6c757d; }
+        .line3 { top: 314px; left: 270px; width: 130px; height: 2px; }
+
+        .legend {
+            position: absolute;
+            top: 720px;
+            left: 20px;
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #dee2e6;
+            font-size: 12px;
+        }
+
+        .legend-item {
+            display: inline-block;
+            margin-right: 20px;
+            margin-bottom: 5px;
+        }
+
+        .legend-color {
+            display: inline-block;
+            width: 15px;
+            height: 15px;
+            margin-right: 5px;
+            border-radius: 3px;
+            vertical-align: middle;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+                margin: 10px;
+            }
+            
+            .diagram-container {
+                height: 600px;
+                overflow-x: auto;
+            }
+            
+            .node {
+                font-size: 9px;
+                padding: 8px;
+            }
+            
+            .title {
+                font-size: 22px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">HypertenCare Enhanced Architecture Diagram</h1>
+        
+        <div class="diagram-container">
+            <!-- Layer Labels -->
+            <div class="layer business-layer">Business Layer - SA Healthcare Goals</div>
+            <div class="layer application-layer">Application Layer - Enhanced Intelligence</div>
+            <div class="layer data-layer">Data Layer - SA Context</div>
+            <div class="layer technology-layer">Technology Layer - AI Integration</div>
+
+            <!-- Business Layer Nodes -->
+            <div class="business-nodes">
+                <div class="business-node business-node-1">Free Healthcare Access<br>NHI Alignment</div>
+                <div class="business-node business-node-2">Community Health<br>Worker Support</div>
+                <div class="business-node business-node-3">Multilingual Accessibility<br>11 Official Languages</div>
+            </div>
+
+            <!-- Main Flow Nodes -->
+            <div class="node node-a">
+                Existing HypertenCare UI<br>
+                <small>Multi-language Support</small>
+            </div>
+            
+            <div class="node node-b">
+                Enhanced Chatbot Interface<br>
+                <small>Preserving Current UX</small>
+            </div>
+            
+            <div class="node node-c">
+                User Context Processing<br>
+                <small>Assessment Integration</small>
+            </div>
+            
+            <div class="node node-d">
+                Intelligent Query Analysis<br>
+                <small>Cultural Context Aware</small>
+            </div>
+            
+            <div class="node node-g">
+                Culturally-Sensitive Response<br>
+                <small>Resource-Aware Guidance</small>
+            </div>
+            
+            <div class="node node-h">
+                Medical Accuracy Validation<br>
+                <small>SA Healthcare Context</small>
+            </div>
+
+            <!-- Data Layer Nodes -->
+            <div class="node node-e">
+                SA-Specific Knowledge Base<br>
+                <small>Pinecone Vector Store</small>
+            </div>
+            
+            <div class="node node-i">
+                Existing Assessment Tools<br>
+                <small>15-Question Risk Assessment</small>
+            </div>
+            
+            <div class="node node-j">
+                SA Clinic Directory<br>
+                <small>3,500+ Locations</small>
+            </div>
+            
+            <div class="node node-k">
+                Emergency Resources<br>
+                <small>10177, Health Hotlines</small>
+            </div>
+            
+            <div class="node node-l">
+                Educational Games<br>
+                <small>BP Simulator, Memory Match</small>
+            </div>
+
+            <!-- Technology Layer Nodes -->
+            <div class="node node-f">
+                Contextual AI Processing<br>
+                <small>OpenRouter/Gemini LLMs</small>
+            </div>
+            
+            <div class="node node-p">
+                Existing Platform Infrastructure<br>
+                <small>Mobile-Optimized</small>
+            </div>
+
+            <!-- Arrows and connecting lines -->
+            <div class="arrow-line line1"></div>
+            <div class="arrow arrow1"></div>
+            
+            <div class="arrow-line line2"></div>
+            <div class="arrow arrow2"></div>
+            
+            <div class="arrow-line line3"></div>
+            <div class="arrow arrow3"></div>
+
+            <!-- Legend -->
+            <div class="legend">
+                <div class="legend-item">
+                    <span class="legend-color" style="background: #e1f5fe;"></span>
+                    User Interface
+                </div>
+                <div class="legend-item">
+                    <span class="legend-color" style="background: #fff3e0;"></span>
+                    Application Processing
+                </div>
+                <div class="legend-item">
+                    <span class="legend-color" style="background: #f3e5f5;"></span>
+                    Data Storage
+                </div>
+                <div class="legend-item">
+                    <span class="legend-color" style="background: #e8f5e8;"></span>
+                    AI/Technology
+                </div>
+                <div class="legend-item">
+                    <span class="legend-color" style="background: #f0f4c3;"></span>
+                    Existing Features
+                </div>
+            </div>
+        </div>
+
+        <div style="margin-top: 20px; padding: 15px; background: #f8f9fa; border-radius: 8px; font-size: 14px; color: #495057;">
+            <strong>Key Enhancement Points:</strong>
+            <ul style="margin: 10px 0; padding-left: 20px;">
+                <li>Semantic search integration with existing SA health resources</li>
+                <li>Assessment-integrated conversational AI for personalized guidance</li>
+                <li>Cultural context awareness across 11 official languages</li>
+                <li>Resource-conscious recommendations aligned with public healthcare</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        // Add interactive hover effects
+        document.querySelectorAll('.node').forEach(node => {
+            node.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-3px) scale(1.02)';
+                this.style.zIndex = '20';
+            });
+            
+            node.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+                this.style.zIndex = '10';
+            });
+        });
+
+        // Add click functionality to show node details
+        document.querySelectorAll('.node').forEach(node => {
+            node.addEventListener('click', function() {
+                const title = this.textContent.trim();
+                alert(`Architecture Component: ${title}\n\nThis component is part of the HypertenCare enhancement strategy, designed to improve AI capabilities while preserving cultural sensitivity and accessibility for South African communities.`);
+            });
+        });
+    </script>
+</body>
+</html>
 
         <h4>Key Changes:</h4>
         <ol>
